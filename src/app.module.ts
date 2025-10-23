@@ -8,9 +8,14 @@ import { UsersModule } from './users/user.module';
 import { AuthModule } from './auth/auth.module';
 import { EmployeesModule } from './employees/employee.module';
 import { BranchesModule } from './branches/branche.module';
+import { PermissionsModule } from './permissions/permissions.module';
+import { IpoModule } from './ipo/ipo.module';
 import { Employee } from './employees/employee.model';
 import { Branch } from './branches/branch.model';
 import { User } from './users/user.model';
+import { Permission } from './permissions/permission.model';
+import { UserPermission } from './permissions/user-permission.model';
+import { IpoApplication } from './ipo/ipo.model';
 
 @Module({
   imports: [
@@ -25,7 +30,7 @@ import { User } from './users/user.model';
         username: process.env.DB_USER,
         password: process.env.DB_PASS,
         database: process.env.DB_NAME,
-        models: [User, Employee, Branch],
+        models: [User, Employee, Branch, Permission, UserPermission, IpoApplication],
         autoLoadModels: true,
         synchronize: true, // disable in prod; prefer migrations
       })
@@ -34,6 +39,8 @@ import { User } from './users/user.model';
     AuthModule,
     EmployeesModule,
     BranchesModule,
+    PermissionsModule,
+    IpoModule,
   ],
   controllers: [AppController],
   providers: [AppService],

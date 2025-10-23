@@ -10,6 +10,7 @@ import { EmployeesModule } from './employees/employee.module';
 import { BranchesModule } from './branches/branche.module';
 import { PermissionsModule } from './permissions/permissions.module';
 import { IpoModule } from './ipo/ipo.module';
+import { AdminModule } from './admin/admin.module';
 import { Employee } from './employees/employee.model';
 import { Branch } from './branches/branch.model';
 import { User } from './users/user.model';
@@ -41,6 +42,7 @@ import { IpoApplication } from './ipo/ipo.model';
     BranchesModule,
     PermissionsModule,
     IpoModule,
+    AdminModule,
   ],
   controllers: [AppController],
   providers: [AppService],
